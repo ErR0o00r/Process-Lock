@@ -1,12 +1,8 @@
 #pragma once
 #include <Windows.h>
-#include <Psapi.h>
-#include <tchar.h>
-#include <iostream>
-#include <functional>
+#include <TlHelp32.h>
 
-HANDLE EnumerateProcesses(std::function<HANDLE(DWORD pid)> PredProc);
+DWORD FindProc(wchar_t* name);
 
-TCHAR* GetProcName(HANDLE proc);
 
-HANDLE IsDiscordProc(DWORD pid);
+
